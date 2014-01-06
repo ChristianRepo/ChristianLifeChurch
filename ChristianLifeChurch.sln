@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.CommonEntities", "ChristianLifeChurch.CommonEntities\ChristianLifeChurch.CommonEntities.csproj", "{7123452C-11C4-449F-BFAF-6DC4295716E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.Core", "ChristianLifeChurch.Core\ChristianLifeChurch.Core.csproj", "{A3C8DC25-7A40-4FB3-A1E9-BE7CB727C8E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.FrontWeb", "ChristianLifeChurch.FrontWeb\ChristianLifeChurch.FrontWeb.csproj", "{21D7A04A-11C0-43E9-8B18-1330E3B4938D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.BackOffice", "ChristianLifeChurch.BackOffice\ChristianLifeChurch.BackOffice.csproj", "{A223798C-6386-40C0-85E0-00591C68FDCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7123452C-11C4-449F-BFAF-6DC4295716E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7123452C-11C4-449F-BFAF-6DC4295716E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7123452C-11C4-449F-BFAF-6DC4295716E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7123452C-11C4-449F-BFAF-6DC4295716E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C8DC25-7A40-4FB3-A1E9-BE7CB727C8E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C8DC25-7A40-4FB3-A1E9-BE7CB727C8E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C8DC25-7A40-4FB3-A1E9-BE7CB727C8E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C8DC25-7A40-4FB3-A1E9-BE7CB727C8E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A223798C-6386-40C0-85E0-00591C68FDCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A223798C-6386-40C0-85E0-00591C68FDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A223798C-6386-40C0-85E0-00591C68FDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A223798C-6386-40C0-85E0-00591C68FDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
