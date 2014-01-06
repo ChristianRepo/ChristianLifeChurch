@@ -1,4 +1,0 @@
-E:\Projects\ChristianLifeChurch\ChristianLifeChurch.CommonEntities\bin\Debug\ChristianLifeChurch.CommonEntities.dll
-E:\Projects\ChristianLifeChurch\ChristianLifeChurch.CommonEntities\bin\Debug\ChristianLifeChurch.CommonEntities.pdb
-E:\Projects\ChristianLifeChurch\ChristianLifeChurch.CommonEntities\obj\Debug\ChristianLifeChurch.CommonEntities.dll
-E:\Projects\ChristianLifeChurch\ChristianLifeChurch.CommonEntities\obj\Debug\ChristianLifeChurch.CommonEntities.pdb
