@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Article.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

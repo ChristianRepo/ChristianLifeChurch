@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.CommonEntities", "ChristianLifeChurch.CommonEntities\ChristianLifeChurch.CommonEntities.csproj", "{7123452C-11C4-449F-BFAF-6DC4295716E3}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.Core", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.FrontWeb", "ChristianLifeChurch.FrontWeb\ChristianLifeChurch.FrontWeb.csproj", "{21D7A04A-11C0-43E9-8B18-1330E3B4938D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.BackOffice", "ChristianLifeChurch.BackOffice\ChristianLifeChurch.BackOffice.csproj", "{A223798C-6386-40C0-85E0-00591C68FDCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChristianLifeChurch.BackOffice", "ChristianLifeChurch.BackOffice\ChristianLifeChurch.BackOffice.csproj", "{46624272-1181-460F-A1A9-6AF2AA7BBAEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D7A04A-11C0-43E9-8B18-1330E3B4938D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A223798C-6386-40C0-85E0-00591C68FDCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A223798C-6386-40C0-85E0-00591C68FDCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A223798C-6386-40C0-85E0-00591C68FDCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A223798C-6386-40C0-85E0-00591C68FDCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46624272-1181-460F-A1A9-6AF2AA7BBAEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46624272-1181-460F-A1A9-6AF2AA7BBAEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46624272-1181-460F-A1A9-6AF2AA7BBAEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46624272-1181-460F-A1A9-6AF2AA7BBAEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
