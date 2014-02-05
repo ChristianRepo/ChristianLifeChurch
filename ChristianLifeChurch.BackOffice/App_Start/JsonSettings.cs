@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
+﻿using System.Globalization;
 using System.Web.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace ChristianLifeChurch.BackOffice.App_Start
+namespace ChristianLifeChurch.BackOffice
 {
     public static class JsonSettings
     {
@@ -19,9 +15,7 @@ namespace ChristianLifeChurch.BackOffice.App_Start
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
                 DateTimeZoneHandling = DateTimeZoneHandling.Unspecified,
                 Culture = CultureInfo.GetCultureInfo("ru-RU"),
-                ContractResolver = new CamelCasePropertyNamesContractResolver(),
-               
-
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
             };
         }
     }

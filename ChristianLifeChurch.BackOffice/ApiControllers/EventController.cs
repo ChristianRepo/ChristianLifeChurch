@@ -14,41 +14,45 @@ namespace ChristianLifeChurch.BackOffice.ApiControllers
     public class EventController : ApiController
     {
         public List<Event> List = new List<Event>();
-        IRepository<Event> repo = new MongoRepository<Event>();
+        private readonly IEventRepository _eventRepository;
 
+        public EventController(IEventRepository repo)
+        {
+            _eventRepository = repo;
+        }
        
         public IEnumerable<Event> Get()
         {
-            repo.Add(new Event()
+            _eventRepository.Add(new Event()
             {
                 Description = "Some descriptions",
                 End = null,
                 Start = DateTime.Now,
                 Title = "Some title"
             });
-            repo.Add(new Event()
+            _eventRepository.Add(new Event()
             {
                 Description = "Some descriptions",
                 End = null,
                 Start = DateTime.Now,
                 Title = "Some title"
             });
-            repo.Add(new Event()
+            _eventRepository.Add(new Event()
             {
                 Description = "Some descriptions",
                 End = null,
                 Start = DateTime.Now,
                 Title = "Some title"
             });
-            repo.Add(new Event()
+            _eventRepository.Add(new Event()
             {
                 Description = "Some descriptions",
                 End = null,
                 Start = DateTime.Now,
                 Title = "Some title"
             });
-            List = repo.ToList();
-            return List;
+            return _eventRepository.ToList();
+            
         }
 
         public Event Get(int id)
