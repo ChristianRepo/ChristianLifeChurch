@@ -11,7 +11,11 @@
         var service = {
             getPeople: getPeople,
             getMessageCount: getMessageCount,
-            getAllEvents: getAllEvents
+            getAllEvents: getAllEvents,
+            getEvent: getEvent,
+            postEvent: postEvent,
+            putEvent:putEvent,
+            deleteEvent: deleteEvent
         };
 
         return service;
@@ -33,12 +37,54 @@
 
         function getAllEvents() {
             var deferred = $q.defer();
-            $http.get('api/event').success(function(data) {
+            $http.get('api/event').success(function (data, status, headers, config) {
                 deferred.resolve(data);
-            }).error(function(status) {
+            }).error(function (data, status, headers, config) {
                 deferred.reject(status);
             });
             return deferred.promise;
         }
+
+        function getEvent(id) {
+            var deferred = $q.defer();
+            $http.get('api/event/'+id).success(function (data, status, headers, config) {
+                deferred.resolve(data);
+            }).error(function (data, status, headers, config) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        }
+
+        function deleteEvent(id) {
+            var deferred = $q.defer();
+            $http.delete('api/event/' + id).success(function(data, status, headers, config) {
+                deferred.resolve(data);
+            }).error(function(data, status, headers, config) {
+                deferred.reject(data, status);
+            });
+            return deferred.promise;
+        }
+
+        function postEvent(event) {
+            var deferred = $q.defer();
+            $http.post('api/event/', event).success(function(data, status, headers, config) {
+                deferred.resolve(data);
+            }).error(function(data, status, headers, config) {
+                deferred.reject(data,status);
+            });
+            return deferred.promise;
+        }
+
+        function putEvent(event) {
+            var deferred = $q.defer();
+            $http.put('api/event/'+ event.id, event).success(function (data, status, headers, config) {
+                deferred.resolve(data);
+            }).error(function (data, status, headers, config) {
+                deferred.reject(data, status);
+            });
+            return deferred.promise;
+        }
+
+        
     }
 })();

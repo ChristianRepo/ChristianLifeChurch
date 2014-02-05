@@ -16,7 +16,8 @@
     ]);
     
     // Handle routing errors and success events
-    app.run(['$route',  function ($route) {
-            // Include $route to kick start the router.
-        }]);        
+    app.run(['$route', 'routeHandler', function ($route, routeHandler) {
+        // Include $route to kick start the router.
+        routeHandler.setRouteSettings();
+    }]);        
 })();

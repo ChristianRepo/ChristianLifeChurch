@@ -14,8 +14,8 @@ namespace ChristianLifeChurch.BackOffice.ApiControllers
 
         public EventController()
         {
-            List.Add(new Event(){Description = "Some descriptions",Id = 1,End = null, Start = DateTime.Now,Title = "Some title"});
-            List.Add(new Event() { Description = "Some descriptions 1", Id = 2, End = null, Start = DateTime.Now, Title = "Some title 1" });
+            List.Add(new Event() { Description = "Some descriptions", Id = 1, End = null, Start = DateTime.Now, Title = "Some title" });
+            List.Add(new Event() { Description = "Some descriptions 1", Id = 2, End = null, Start = DateTime.Now.AddHours(6), Title = "Some title 1" });
             List.Add(new Event() { Description = "Some descriptions 2", Id = 3, End = null, Start = DateTime.Now, Title = "Some title 2" });
             List.Add(new Event() { Description = "Some descriptions 3", Id = 4, End = null, Start = DateTime.Now, Title = "Some title 3" });
             List.Add(new Event() { Description = "Some descriptions 4", Id = 5, End = null, Start = DateTime.Now, Title = "Some title 4" });
@@ -26,30 +26,56 @@ namespace ChristianLifeChurch.BackOffice.ApiControllers
         {
             return List;
         }
-        
+
         public Event Get(int id)
         {
             return List.First(w => w.Id == id);
         }
 
-        public void Post([FromBody]Event value)
+        public HttpResponseMessage Post(HttpRequestMessage request, [FromBody]Event value)
         {
-            List.Add(value);
-        }
-        
-        public void Put(int id, [FromBody]Event value)
-        {
-           var oldVal =  List.First(w => w.Id == id);
-            oldVal.Id = value.Id;
-            oldVal.Description = value.Description;
-            oldVal.Start = value.Start;
-            oldVal.End = value.End;
+            if (ModelState.IsValid)
+            {
+                List.Add(value);
+                var msg = string.Format("Событие {0} успешно добавленно!", value.Title);
+                return request.CreateResponse(HttpStatusCode.OK, msg);
+            }
+            return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
         }
 
-        public void Delete(int id)
+        private IEnumerable<string> GetErrorMessages()
         {
-           var value = List.First(w => w.Id == id);
-            List.Remove(value);
+            return ModelState.Values.SelectMany(sm => sm.Errors.Select(s => s.ErrorMessage));
+        }
+
+        public HttpResponseMessage Put(HttpRequestMessage request, int id, [FromBody]Event value)
+        {
+            if (ModelState.IsValid)
+            {
+                var oldVal = List.First(w => w.Id == id);
+                oldVal.Id = value.Id;
+                oldVal.Description = value.Description;
+                oldVal.Start = value.Start;
+                oldVal.End = value.End;
+                var msg = string.Format("Событие {0} успешно обновленно!",oldVal.Title);
+                return request.CreateResponse(HttpStatusCode.OK, msg);
+            }
+            return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
+        }
+
+        public HttpResponseMessage Delete(HttpRequestMessage request,int id)
+        {
+            try
+            {
+                var value = List.First(w => w.Id == id);
+                List.Remove(value);
+                return request.CreateResponse(HttpStatusCode.OK, "Удаление события произошло успешно!");
+            }
+            catch (Exception ex)
+            {
+                return request.CreateResponse(HttpStatusCode.BadRequest, "Удаление события произошло с ошибкой, попробуйте еще раз!");
+            }
+            
         }
     }
 }

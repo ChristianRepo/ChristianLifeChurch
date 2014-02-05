@@ -44,13 +44,21 @@
                  url: '/events',
                  config: {
                      title: 'События',
-                     templateUrl: 'app/event/event.html',
+                     templateUrl: 'app/event/listofevents.html',
                      settings: {
                          nav: 3,
-                         content: '<i class="fa fa-lock"></i> События'
+                         content: '<i class="fa fa-calendar"></i> События'
                      }
                  }
-             }
+             },
+               {
+                   url: '/events/addeditevent/:id',
+                   config: {
+                       title: 'События',
+                       templateUrl: 'app/event/editevent.html',
+                       settings: {}
+                   }
+               }
         ];
     }
 })();

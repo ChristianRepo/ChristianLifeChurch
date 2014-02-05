@@ -1,0 +1,57 @@
+﻿<section class="mainbar" data-ng-controller="listofevents as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div><button type="button" class="btn btn-info btn-xs" data-ng-click="vm.addNewEvent()"><i class="fa fa-plus"></i>Добавить новое событие</button></div>
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+                        <div class="widget-content user">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Название</th>
+                                        <th>Дата создания</th>
+                                        <th>Дата завершения</th>
+                                        <th>Описание</th>
+                                        <th>Редактировать</th>
+                                        <th>Удалить</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-ng-repeat="e in vm.eventList">
+                                    <tr>
+                                        <td>{{e.id}}</td>
+                                        <td>{{e.title | textSubstring}}</td>
+                                        <td>{{e.start | dateTimeLongRus}}</td>
+                                        <td>{{e.end}}</td>
+                                        <td>{{e.description | textSubstring}}</td>
+                                        <td><button type="button" class="btn btn-warning btn-xs" data-ng-click="vm.editEvent(e)"><i class="fa fa-edit"></i>Редактировать</button></td>
+                                        <td><button type="button" class="btn btn-danger btn-xs" data-ng-click="vm.deleteEvent(e)"><i class="fa fa-trash-o"></i>Удалить</button></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
