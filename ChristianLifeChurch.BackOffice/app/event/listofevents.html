@@ -10,7 +10,7 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
+                                        <!--<th>Id</th>-->
                                         <th>Название</th>
                                         <th>Дата создания</th>
                                         <th>Дата завершения</th>
@@ -21,10 +21,10 @@
                                 </thead>
                                 <tbody data-ng-repeat="e in vm.eventList">
                                     <tr>
-                                        <td>{{e.id}}</td>
+                                        <!--<td>{{e.id}}</td>-->
                                         <td>{{e.title | textSubstring}}</td>
                                         <td>{{e.start | dateTimeLongRus}}</td>
-                                        <td>{{e.end}}</td>
+                                        <td>{{e.end | dateTimeLongRus}}</td>
                                         <td>{{e.description | textSubstring}}</td>
                                         <td><button type="button" class="btn btn-warning btn-xs" data-ng-click="vm.editEvent(e)"><i class="fa fa-edit"></i>Редактировать</button></td>
                                         <td><button type="button" class="btn btn-danger btn-xs" data-ng-click="vm.deleteEvent(e)"><i class="fa fa-trash-o"></i>Удалить</button></td>

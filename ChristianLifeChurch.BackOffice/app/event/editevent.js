@@ -85,7 +85,10 @@
         }
 
         function clear() {
-            vm.e = null;
+            vm.e.start = '';
+            vm.e.end = '';
+            vm.e.title = '';
+            vm.e.description = '';
         }
 
         

@@ -29,8 +29,10 @@
 
         function deleteEvent(event) {
             repository.deleteEvent(event.id).then(function (data) {
+                getEventsCount();
+                getAllEvents();
                 var logSuccess = common.logger.logSuccess;
-                logSuccess(data.message, data, controllerId, true);
+                logSuccess(data, data, controllerId, true);
             }, function (data, status) {
                 var msg = data;
                 var logError = common.logger.logError;

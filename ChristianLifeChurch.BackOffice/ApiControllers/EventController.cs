@@ -21,50 +21,21 @@ namespace ChristianLifeChurch.BackOffice.ApiControllers
             _eventRepository = repo;
         }
        
-        public IEnumerable<Event> Get()
-        {
-            _eventRepository.Add(new Event()
-            {
-                Description = "Some descriptions",
-                End = null,
-                Start = DateTime.Now,
-                Title = "Some title"
-            });
-            _eventRepository.Add(new Event()
-            {
-                Description = "Some descriptions",
-                End = null,
-                Start = DateTime.Now,
-                Title = "Some title"
-            });
-            _eventRepository.Add(new Event()
-            {
-                Description = "Some descriptions",
-                End = null,
-                Start = DateTime.Now,
-                Title = "Some title"
-            });
-            _eventRepository.Add(new Event()
-            {
-                Description = "Some descriptions",
-                End = null,
-                Start = DateTime.Now,
-                Title = "Some title"
-            });
+        public IEnumerable<Event> Get(){
+          
             return _eventRepository.ToList();
-            
         }
 
-        public Event Get(int id)
+        public Event Get(string id)
         {
-            return null;
+            return _eventRepository.GetById(id);
         }
 
         public HttpResponseMessage Post(HttpRequestMessage request, [FromBody]Event value)
         {
             if (ModelState.IsValid)
             {
-                List.Add(value);
+                _eventRepository.Add(value);
                 var msg = string.Format("Событие {0} успешно добавленно!", value.Title);
                 return request.CreateResponse(HttpStatusCode.OK, msg);
             }
@@ -76,27 +47,27 @@ namespace ChristianLifeChurch.BackOffice.ApiControllers
             return ModelState.Values.SelectMany(sm => sm.Errors.Select(s => s.ErrorMessage));
         }
 
-        public HttpResponseMessage Put(HttpRequestMessage request, int id, [FromBody]Event value)
+        public HttpResponseMessage Put(HttpRequestMessage request, string id, [FromBody]Event value)
         {
             if (ModelState.IsValid)
             {
-                var oldVal = List.First(w => w.Title == value.Title);
-                oldVal.Id = value.Id;
-                oldVal.Description = value.Description;
-                oldVal.Start = value.Start;
-                oldVal.End = value.End;
-                var msg = string.Format("Событие {0} успешно обновленно!",oldVal.Title);
+                //var oldVal = _eventRepository.GetById(id);
+                //oldVal.Description = value.Description;
+                //oldVal.Start = value.Start;
+                //oldVal.End = value.End;
+                _eventRepository.Update(value);
+                var msg = string.Format("Событие {0} успешно обновленно!", value.Title);
                 return request.CreateResponse(HttpStatusCode.OK, msg);
             }
             return request.CreateResponse(HttpStatusCode.BadRequest, GetErrorMessages());
         }
 
-        public HttpResponseMessage Delete(HttpRequestMessage request,int id)
+        public HttpResponseMessage Delete(HttpRequestMessage request,string id)
         {
             try
             {
-                //var value = List.First(w => w.Title);
-                //List.Remove(value);
+                var value =  _eventRepository.GetById(id);
+                _eventRepository.Delete(value);
                 return request.CreateResponse(HttpStatusCode.OK, "Удаление события произошло успешно!");
             }
             catch (Exception ex)
