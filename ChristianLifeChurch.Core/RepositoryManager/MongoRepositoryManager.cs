@@ -1,20 +1,10 @@
-﻿using ChristianLifeChurch.Core;
+﻿using System.Collections.Generic;
+using System.Linq;
+using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 
-namespace MongoRepository
+namespace ChristianLifeChurch.Core.RepositoryManager
 {
-    using MongoDB.Driver;
-    using MongoDB.Driver.Builders;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    // TODO: Code coverage here is near-zero. A new RepoManagerTests.cs class needs to be created and we need to
-    //      test these methods. Ofcourse we also need to update codeplex documentation on this entirely new object.
-    //      This is a work-in-progress.
-
-    // TODO: GetStats(), Validate(), GetIndexes and EnsureIndexes(IMongoIndexKeys, IMongoIndexOptions) "leak"
-    //      MongoDb-specific details. These probably need to get wrapped in MongoRepository specific objects to hide
-    //      MongoDb.
-
     /// <summary>
     /// Deals with the collections of entities in MongoDb. This class tries to hide as much MongoDb-specific details
     /// as possible but it's not 100% *yet*. It is a very thin wrapper around most methods on MongoDb's MongoCollection

@@ -19,7 +19,9 @@ namespace ChristianLifeChurch.BackOffice.App_Start
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
                 DateTimeZoneHandling = DateTimeZoneHandling.Unspecified,
                 Culture = CultureInfo.GetCultureInfo("ru-RU"),
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+               
+
             };
         }
     }

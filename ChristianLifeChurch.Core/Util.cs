@@ -12,7 +12,7 @@
         /// <summary>
         /// The default key MongoRepository will look for in the App.config or Web.config file.
         /// </summary>
-        private const string DefaultConnectionstringName = "MongoServerSettings";
+        private const string DefaultConnectionstringName = "ChurchServerSettings";
 
         /// <summary>
         /// Retrieves the default connectionstring from the App.config or Web.config file.

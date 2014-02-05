@@ -1,11 +1,8 @@
-﻿using ChristianLifeChurch.Core;
+﻿using System.Collections.Generic;
+using MongoDB.Driver;
 
-namespace MongoRepository
+namespace ChristianLifeChurch.Core.RepositoryManager
 {
-    using System.Collections.Generic;
-    using MongoDB.Driver;
-    using System;
-
     /// <summary>
     /// IRepositoryManager definition.
     /// </summary>
