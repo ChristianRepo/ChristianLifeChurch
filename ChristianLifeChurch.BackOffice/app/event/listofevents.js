@@ -6,6 +6,7 @@
 
     function eventcontroller(common, repository, $location) {
         var vm = this;
+        var date = Date.now();
         activate();
 
         function activate() {
@@ -13,7 +14,9 @@
             vm.editEvent = editEvent;
             vm.addNewEvent = addNewEvent;
             vm.deleteEvent = deleteEvent;
-            var promises = [getEventsCount(), getAllEvents()];
+            vm.goToCalendar = goToCalendar;
+            vm.goToDetails = goToDetails;
+            var promises = [getAllEvents()];
             common.activateController(promises, controllerId)
                 .then(function () {  });
             
@@ -40,20 +43,27 @@
             });
         }
 
-        function getEventsCount() {
+        function getAllEvents() {
             repository.getAllEvents().then(function (data) {
-                console.log(data.length);
+
+                var allEventsCount = data.length;
+                var activeEventCount = $.grep(data, function (v) {
+                    return Date.parse(v.start)> date;
+                }).length;
+
+                vm.title = 'Список событий ' + activeEventCount + '/' + allEventsCount;
+                vm.eventList = data;
             }, function (status) {
                 console.log(status);
             });
         }
 
-        function getAllEvents() {
-            repository.getAllEvents().then(function (data) {
-                vm.eventList = data;
-            }, function (status) {
-                console.log(status);
-            });
+        function goToCalendar() {
+            $location.path('/events/calendar');
+        }
+
+        function goToDetails(id) {
+            $location.path('/events/details/'+id);
         }
    
     }

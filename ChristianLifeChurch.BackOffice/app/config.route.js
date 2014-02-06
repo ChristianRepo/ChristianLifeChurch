@@ -58,6 +58,22 @@
                        templateUrl: 'app/event/editevent.html',
                        settings: {}
                    }
+               },
+               {
+                   url: '/events/calendar',
+                   config: {
+                       title: 'Календарь событий',
+                       templateUrl: 'app/event/calendar.html',
+                       settings: {}
+                   }
+               },
+               {
+                   url: '/events/details/:id',
+                   config: {
+                       title: 'Календарь событий',
+                       templateUrl: 'app/event/details.html',
+                       settings: {}
+                   }
                }
         ];
     }

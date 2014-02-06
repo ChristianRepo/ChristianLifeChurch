@@ -1,0 +1,30 @@
+﻿<section class="mainbar" data-ng-controller="calendar as vm">
+    <section class="matter">
+        <link href="../../Content/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+        <link href="../../Content/fullcalendar.css" rel="stylesheet" />
+        <script src="../../Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="../../Scripts/fullcalendar.min.js"></script>
+        <script src="../../Scripts/ru.js"></script>
+       <div class="container">
+           <div class="row">
+               <div>
+                   <button class="btn btn-info"
+                           data-ng-click="vm.goBack()">
+                       <i class=" fa fa-reply"></i>Назад
+                   </button>
+               </div>
+               <div class="widget wviolet">
+                   <div data-cc-widget-header title="{{vm.title}}"></div>
+                   <div class="widget-content user">
+                       <div id="calendar"></div>
+                   </div>
+                   <div class="widget-foot">
+                       <div class="clearfix"></div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </section>
+</section>
+
+

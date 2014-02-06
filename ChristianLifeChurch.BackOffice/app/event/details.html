@@ -1,0 +1,26 @@
+﻿<section class="mainbar" data-ng-controller="details as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <button class="btn btn-info"
+                            data-ng-click="vm.goBack()">
+                        <i class=" fa fa-reply"></i>Назад
+                    </button>
+                </div>
+                <div class="widget wgreen">
+                    <div data-cc-widget-header title="{{vm.e.title}}"></div>
+                    <div class="widget-content user">
+                        <p>Дата начала: {{vm.e.start}}<p>
+                        <p data-ng-show="vm.e.end != 'Отсуствует'">Дата окончания: {{vm.e.end}}</p>
+                        <p style="font-size: 14px;">{{vm.e.description}}</p>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
