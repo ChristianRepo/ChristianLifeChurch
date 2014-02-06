@@ -23,4 +23,5 @@
             common.$broadcast(commonConfig.config.spinnerToggleEvent, { show: show });
         }
     }
+
 })();

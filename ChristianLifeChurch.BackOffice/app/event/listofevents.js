@@ -31,18 +31,25 @@
         }
 
         function deleteEvent(event) {
-            repository.deleteEvent(event.id).then(function (data) {
-                getEventsCount();
-                getAllEvents();
-                var logSuccess = common.logger.logSuccess;
-                logSuccess(data, data, controllerId, true);
-            }, function (data, status) {
-                var msg = data;
-                var logError = common.logger.logError;
-                logError(msg, data, controllerId, true);
-            });
-        }
+            var modalInstance = common.confirm.startConfirm('Удаление события', 'Вы действительно хотите удалить событие?');
 
+            modalInstance.result.then(function () {
+                repository.deleteEvent(event.id).then(function (data) {
+                    getAllEvents();
+                    var logSuccess = common.logger.logSuccess;
+                    logSuccess(data, data, controllerId, true);
+                }, function (data, status) {
+                    var msg = data;
+                    var logError = common.logger.logError;
+                    logError(msg, data, controllerId, true);
+                });
+            }, function () {
+                return;
+            });
+            
+            
+        }
+       
         function getAllEvents() {
             repository.getAllEvents().then(function (data) {
 

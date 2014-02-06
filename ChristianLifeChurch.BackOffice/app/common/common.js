@@ -25,9 +25,9 @@
     });
 
     commonModule.factory('common',
-        ['$q', '$rootScope', '$timeout','$http', 'commonConfig', 'logger', common]);
+        ['$q', '$rootScope', '$timeout','$http', 'commonConfig', 'logger','$modal','confirm', common]);
 
-    function common($q, $rootScope, $timeout,$http, commonConfig, logger) {
+    function common($q, $rootScope, $timeout, $http, commonConfig, logger, $modal, confirm) {
         var throttles = {};
 
         var service = {
@@ -42,7 +42,8 @@
             debouncedThrottle: debouncedThrottle,
             isNumber: isNumber,
             logger: logger, // for accessibility
-            textContains: textContains
+            textContains: textContains,
+            confirm: confirm
         };
 
         return service;
@@ -128,5 +129,6 @@
         function textContains(text, searchText) {
             return text && -1 !== text.toLowerCase().indexOf(searchText.toLowerCase());
         }
-    }
+        }
+    
 })();
