@@ -14,6 +14,7 @@ namespace ChristianLifeChurch.Core.StructureMap
         public CoreRegistry()
         {
             For<IEventRepository>().Use<EventRepository>();
+            For<IMemberRepository>().Use<MemberRepository>();
         }
     }
 }

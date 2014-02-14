@@ -74,7 +74,26 @@
                        templateUrl: 'app/event/details.html',
                        settings: {}
                    }
-               }
+               },
+               {
+                   url: '/members',
+                   config: {
+                       title: 'Служители',
+                       templateUrl: 'app/member/listOfMembers.html',
+                       settings: {
+                           nav: 4,
+                           content: '<i class="fa fa-users"></i> Служители'
+                       }
+                   }
+               },
+               {
+                   url: '/member/addmember/:id',
+                   config: {
+                       title: 'Служители',
+                       templateUrl: 'app/member/addMember.html',
+                       settings: {}
+                   }
+               },
         ];
     }
 })();

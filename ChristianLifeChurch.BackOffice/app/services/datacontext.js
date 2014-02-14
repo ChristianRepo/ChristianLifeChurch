@@ -15,7 +15,9 @@
             getEvent: getEvent,
             postEvent: postEvent,
             putEvent:putEvent,
-            deleteEvent: deleteEvent
+            deleteEvent: deleteEvent,
+            getAllMembers: getAllMembers,
+            postMember: postMember
         };
 
         return service;
@@ -33,6 +35,26 @@
                 { firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' }
             ];
             return $q.when(people);
+        }
+
+        function getAllMembers() {
+            var deferred = $q.defer();
+            $http.get('api/member').success(function (data, status, headers, config) {
+                deferred.resolve(data);
+            }).error(function (data, status, headers, config) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        }
+
+        function postMember(member) {
+            var deferred = $q.defer();
+            $http.post('api/member/', member).success(function (data, status, headers, config) {
+                deferred.resolve(data);
+            }).error(function (data, status, headers, config) {
+                deferred.reject(data, status);
+            });
+            return deferred.promise;
         }
 
         function getAllEvents() {

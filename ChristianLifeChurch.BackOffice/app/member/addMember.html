@@ -1,0 +1,84 @@
+﻿<section class="mainbar" data-ng-controller="addMember as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="btn-group pull-right">
+                    <button class="btn btn-info"
+                            data-ng-click="vm.goBack()">
+                        <i class=" fa fa-reply"></i>Назад
+                    </button>
+                    <button class="btn btn-info"
+                            data-ng-click="vm.clear()">
+                        <i class="fa fa-refresh"></i>Очистить
+                    </button>
+                    <button class="btn btn-info"
+                            data-ng-click="vm.saveMember(vm.member)"
+                            ng-disabled="eventForm.$invalid">
+                        <i class="fa fa-save"></i>Сохранить
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+                        <div>
+                            <form novalidate name="memberForm" role="form" class="css-form">
+                                <div class="form-group">
+                                    <input class="form-control input-sm" type="text" placeholder="Имя служителя" data-ng-model="vm.member.firstName" required />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-sm" type="text" placeholder="Отчество служителя" data-ng-model="vm.member.midleName" />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-sm" type="text" placeholder="Фамилия служителя" data-ng-model="vm.member.lastName" required />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-sm" type="text" placeholder="Служение в церкви" data-ng-model="vm.member.job" required />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control input-sm" type="file" ng-file-select="vm.onFileSelect($files)"/>
+                                </div>
+                                <div class="form-group">
+                                    <img data-cc-img-person="{{vm.tempFoto}}" class="img-polaroid" />
+                                </div>
+                                <div class="form-group">
+                                    <div style="width: 60%" class="input-group date" id='dateOfBirthDataPicker'>
+                                        <input id="dateOfBirth" class="form-control input-sm dateOfBirth" type="text" placeholder="Дата рождения служителя" data-ng-model="vm.e.dateOfBirth" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="memberAbout">Описание служителя</label>
+                                    <textarea name="memberAbout" class="form-control" rows="10" data-ng-model="vm.member.about" required></textarea>
+                                </div>
+
+                            </form>
+                            <div class="alert alert-danger" data-ng-show="vm.errors.length > 0">
+                                <ul>
+                                    <li data-ng-repeat="error in vm.errors track by $index">{{error}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#dateOfBirthDataPicker').datetimepicker({
+                    language: 'ru',
+                    pickTime: false
+                });
+
+                $('.dateOfBirth').mask('00.00.0000');
+
+            });
+        </script>
+    </section>
+</section>

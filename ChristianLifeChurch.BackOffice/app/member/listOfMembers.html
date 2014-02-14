@@ -1,0 +1,28 @@
+﻿<section class="mainbar" data-ng-controller="listOfMembers as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <button type="button" class="btn btn-info btn-xs" data-ng-click="vm.addMember()"><i class="fa fa-plus"></i>Добавить нового служителя</button>
+                </div>
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="{{vm.title}}" subtitle="{{vm.allMemberCount}}"></div>
+                    <div class="widget-content user">
+                        <div class="padd list-flow" data-ng-repeat="i in vm.memberList">
+                            <div class="user">
+                                <img data-cc-img-person="{{i.foto}}" class="img-polaroid stacked" />
+                                <div class="name-stack">
+                                    <h5>{{i.firstName}}</h5>
+                                    <h5>{{i.lastName}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionName.cs" />
+    <Compile Include="DbEntities\HomeGroup.cs" />
+    <Compile Include="DbEntities\Member.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="DbEntities\Event.cs" />
     <Compile Include="IEntity.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="RepositoryManager\MongoRepositoryManager.cs" />
     <Compile Include="Repository\EventRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\MongoRepository.cs" />
     <Compile Include="StructureMap\CoreRegistry.cs" />
     <Compile Include="Util.cs" />
